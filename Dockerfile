@@ -1,9 +1,9 @@
-FROM python:3.5.2-alpine
+FROM python:3.7.2-alpine
 
 RUN addgroup -S devpi && adduser -S -G devpi devpi
 
-ENV DEVPI_SERVER_VERSION=4.1.0 \
-    DEVPI_CLIENT_VERSION=2.6.4
+ENV DEVPI_SERVER_VERSION=4.8.1 \
+    DEVPI_CLIENT_VERSION=4.3.0
 
 RUN pip install --no-cache-dir devpi-server=="${DEVPI_SERVER_VERSION}" \
                                devpi-client=="${DEVPI_CLIENT_VERSION}"
